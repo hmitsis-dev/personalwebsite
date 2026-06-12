@@ -3,56 +3,338 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Harry Mitsis</title>
-  <meta name="description" content="Harry Mitsis - DevOps Engineer">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link rel="stylesheet" href="css/minimal.css">
+  <title>Harry Mitsis | Infrastructure &amp; Automation</title>
+  <meta name="description" content="Harry Mitsis - Systems &amp; Automation Programmer">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-color: #0f172a;       /* Deep slate black */
+      --card-bg: #1e293b;        /* Card background */
+      --text-main: #f8fafc;      /* Crisp white */
+      --text-muted: #94a3b8;     /* Slate gray */
+      --accent: #38bdf8;         /* Tech cyan */
+      --accent-dim: #0369a1;     /* Dark cyan */
+      --border: #334155;         /* Subtle border */
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    /* Terminal-style header */
+    header {
+      margin-bottom: 3rem;
+      border-bottom: 2px dashed var(--border);
+      padding-bottom: 1.5rem;
+    }
+
+    .name {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 0 0 0.5rem 0;
+      letter-spacing: -0.05em;
+    }
+
+    .title-sub {
+      font-family: 'Fira Code', monospace;
+      color: var(--accent);
+      font-size: 1.1rem;
+      margin: 0 0 1rem 0;
+    }
+
+    .meta-info {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .meta-info span {
+      margin-right: 1.5rem;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      font-family: 'Fira Code', monospace;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+    }
+
+    h2::before {
+      content: "> ";
+      color: var(--accent);
+      margin-right: 0.5rem;
+    }
+
+    p {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    /* Projects Grid */
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+      transition: border-color 0.2s ease;
+    }
+
+    .project-card:hover {
+      border-color: var(--accent);
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .project-title a {
+      color: var(--text-main);
+      text-decoration: none;
+    }
+
+    .project-title a:hover {
+      color: var(--accent);
+    }
+
+    .project-tag {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.75rem;
+      background: var(--accent-dim);
+      color: var(--text-main);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+    }
+
+    .project-desc {
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    /* Interactive Spec List (Skills) */
+    .spec-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.9rem;
+    }
+
+    .spec-item {
+      background: rgba(255, 255, 255, 0.02);
+      border-left: 3px solid var(--accent);
+      padding: 0.5rem 1rem;
+    }
+
+    .spec-label {
+      color: var(--text-main);
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .spec-values {
+      color: var(--text-muted);
+    }
+
+    /* Timeline (Experience) */
+    .timeline {
+      border-left: 2px solid var(--border);
+      padding-left: 1.5rem;
+      margin-left: 0.5rem;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: calc(-1.5rem - 6px);
+      top: 0.35rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .time-frame {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.85rem;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .job-title {
+      font-weight: 600;
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .job-desc {
+      margin: 0.25rem 0 0 0;
+      font-size: 0.95rem;
+    }
+
+    /* Footer / Links */
+    footer {
+      margin-top: 5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .social-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      margin: 0 1rem;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.9rem;
+      transition: color 0.2s ease;
+    }
+
+    .social-links a:hover {
+      color: var(--accent);
+    }
+  </style>
 </head>
 <body>
-  <div class="cv-container">
-    <h1 class="name">Harry Mitsis</h1>
-    <p class="title">DevOps Engineer</p>
+
+  <div class="container">
     
-    <section class="summary">
-      <p>Bridging the gap between development and operations, I build and maintain robust, automated systems. My focus is on cloud infrastructure, efficient CI/CD, and scalable solutions.</p>
+    <header>
+      <h1 class="name">Harry Mitsis</h1>
+      <p class="title-sub">Systems &amp; Automation Engineer</p>
+      <div class="meta-info">
+        <span><i class="fa-solid ref fa-terminal"></i> pythonista</span>
+        <span><i class="fa-solid fa-layer-group"></i> devops</span>
+        <span><i class="fa-solid fa-map-pin"></i> italy</span>
+      </div>
+    </header>
+    
+    <section>
+      <h2>About</h2>
+      <p>I build and break systems..sometimes in production.</p>
     </section>
 
-    <section class="experience">
-      <h2>Experience</h2>
-      <ul>
-        <li><strong>2024 - Present: DevOps Engineer at Webranking</strong> (Cloud, Automation, CI/CD, Backend)</li>
-        <li><strong>2022-2024: System Engineer at vCube consulting for Crif</strong> (Infrastructure, Data Management, Cloud)</li>
-        <li><strong>2021-2022: Junior System Administrator at DXC Technology</strong> (System Administration, Windows Server, Networking)</li>
-      </ul>
-    </section>
-    
-    <section class="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>Infrastructure: AWS, Google Cloud, VMware, Linux, , Proxmox, Raspberry </li>
-        <li>DevOps: Docker, Kubernetes, Terraform, Jenkins,Github Actions/Bitbucket pipelines, Scripting</li>
-        <li>Languages: Python, Node.js, Bash</li>
-      </ul>
-    </section>
-    
-    <section class="education">
-      <h2>Education</h2>
-      <ul>
-        <li>Master's in Applied Economics (University of Bordeaux)</li>
-        <li>MSc in Economics of Innovation (University of Insubria)</li>
-        <li>BSc in Accounting and Finance (University of Patras)</li>
-      </ul>
-    </section>
-    
-    <section class="contact">
-      <h2>Contact</h2>
-      <div class="social-links">
-        <a href="https://github.com/harry-mitsis" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/charilaos-mitsis-5220401bb/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:harrymitsis@yahoo.com" title="Email"><i class="fas fa-envelope"></i></a>
+    <section>
+      <h2>Flagship Projects</h2>
+      
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-title">EquivEx <i class="fa-solid fa-lock" style="font-size:0.75rem; color: var(--text-muted);" title="Private System"></i></span>
+          <span class="project-tag">Private Deployment</span>
+        </div>
+        <p class="project-desc">A proprietary, self-hosted risk command center and personal portfolio monitor engineered to run on low-resource local hardware. Built using the H.A.T.S. stack (HTMX/Alpine) to process in-process Monte Carlo simulations, OLS regressions, and automated Telegram alerts over a isolated, private Tailscale mesh network.</p>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-title"><a href="https://dkproperties.gr/el/" target="_blank">dkproperties.gr <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.75rem;"></i></a></span>
+          <span class="project-tag">Full-Stack Deploy</span>
+        </div>
+        <p class="project-desc">Architected the entire deployment environment, host execution parameters, and automated delivery pipelines for a modern real estate management platform.</p>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-title"><a href="https://wasitdown.dev/" target="_blank">wasitdown.dev <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.75rem;"></i></a></span>
+          <span class="project-tag">Python · Paused</span>
+        </div>
+        <p class="project-desc">An asynchronous status monitoring application for major cloud providers and machine learning APIs. Currently frozen due to upstream database networking changes.</p>
       </div>
     </section>
+
+    <section>
+      <h2>Engineering Log</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="time-frame">2026 — Present</span>
+          <h3 class="job-title">Infrastructure Engineer &amp; DevOps · Zucchetti Hospitality</h3>
+          <p class="job-desc">Managing high-availability orchestration clusters, database distribution, and server migrations for production microservices.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="time-frame">2024 — 2026</span>
+          <h3 class="job-title">DevOps Engineer · Webranking</h3>
+          <p class="job-desc">Owned configuration management pipelines, cloud environments, and automated continuous delivery lifecycles.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="time-frame">2022 — 2024</span>
+          <h3 class="job-title">System Engineer · vCube (for Crif)</h3>
+          <p class="job-desc">Focused on Linux system internals, storage layers, and big data pipeline environments.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="time-frame">2019 — Present</span>
+          <h3 class="job-title">Independent Python Developer</h3>
+          <p class="job-desc">Writing low-level daemon processes, custom asynchronous CLI engines, and mathematical simulations for localized servers.</p>
+        </div>
+      </div>
+    </section>
+    
+    <section>
+      <h2>System Specifications</h2>
+      <div class="spec-grid">
+        <div class="spec-item">
+          <span class="spec-label">Core Automation</span>
+          <span class="spec-values">Python, Go, Bash, TypeScript</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Orchestration</span>
+          <span class="spec-values">Docker, Kubernetes, Helm</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Infrastructure As Code</span>
+          <span class="spec-values">Terraform, Ansible, Pipelines</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Environments</span>
+          <span class="spec-values">Linux, AWS (CSAA), Pi, Proxmox</span>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="social-links">
+        <a href="https://github.com/hmitsis-dev" target="_blank"><i class="fa-brands fa-github"></i> github</a>
+        <a href="https://www.linkedin.com/in/charilaos-mitsis-5220401bb/" target="_blank"><i class="fa-brands fa-linkedin"></i> linkedin</a>
+        <a href="mailto:harrymitsis@yahoo.com"><i class="fa-solid fa-envelope"></i> email</a>
+      </div>
+    </footer>
+
   </div>
+
 </body>
 </html>
