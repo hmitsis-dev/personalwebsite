@@ -190,20 +190,6 @@
     .project-desc { margin: 0; color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; }
 
     /* Experience */
-    .exp-list {
-      max-height: 440px;
-      overflow-y: auto;
-      padding-right: 0.5rem;
-    }
-
-    .exp-list::-webkit-scrollbar { width: 16px; }
-    .exp-list::-webkit-scrollbar-track { background: #dcdcdc; border-radius: 3px; }
-    .exp-list::-webkit-scrollbar-thumb {
-      background: linear-gradient(180deg, #eaeaea, #b8b8b8);
-      border: 1px solid #888;
-      border-radius: 3px;
-    }
-
     .exp-item {
       border-left: 3px solid var(--xp-blue-2);
       padding: 0.05rem 0 0.9rem 0.95rem;
@@ -369,14 +355,6 @@
 
         <div class="project-card">
           <div class="project-head">
-            <span class="project-name">EquivEx 🔒</span>
-            <span class="project-tag">Private Deployment</span>
-          </div>
-          <p class="project-desc">A proprietary, self-hosted risk command center and personal portfolio monitor engineered to run on low-resource local hardware. Built using the H.A.T.S. stack (HTMX/Alpine) to process in-process Monte Carlo simulations, OLS regressions, and automated Telegram alerts over an isolated, private Tailscale mesh network.</p>
-        </div>
-
-        <div class="project-card">
-          <div class="project-head">
             <span class="project-name"><a href="https://dkproperties.gr/el/" target="_blank">dkproperties.gr ↗</a></span>
             <span class="project-tag">Full-Stack Deploy</span>
           </div>
@@ -396,7 +374,7 @@
 
     <div class="win">
       <div class="win-titlebar">
-        <span class="win-title">📊 Engineering Log - Properties</span>
+        <span class="win-title">💼 Currently</span>
         <span class="win-controls">
           <button class="win-btn min" title="Minimize">_</button>
           <button class="win-btn" title="Maximize">□</button>
@@ -404,76 +382,12 @@
         </span>
       </div>
       <div class="win-body">
-        <div class="exp-list">
-
-          <div class="exp-item">
-            <h3 class="exp-role">DevOps Engineer</h3>
-            <p class="exp-company">Zucchetti Hospitality</p>
-            <p class="exp-meta">May 2026 — Present · 5 mos</p>
-            <p class="exp-meta">Reggio Emilia, Emilia-Romagna, Italy · Hybrid</p>
-            <div class="exp-skills"><span class="skill-pill">Terraform</span><span class="skill-pill">Ansible</span><span class="skill-pill">+5 skills</span></div>
-          </div>
-
-          <div class="exp-item">
-            <h3 class="exp-role">DevOps Engineer</h3>
-            <p class="exp-company">Webranking · Full-time</p>
-            <p class="exp-meta">Sep 2024 — May 2026 · 1 yr 9 mos</p>
-            <p class="exp-meta">Hybrid</p>
-          </div>
-
-          <div class="exp-item">
-            <h3 class="exp-role">Cloud Engineer</h3>
-            <p class="exp-company">CRIF · Contract</p>
-            <p class="exp-meta">May 2023 — Aug 2024 · 1 yr 4 mos</p>
-            <p class="exp-meta">Remote</p>
-            <div class="exp-skills"><span class="skill-pill">Cloud Infrastructure</span><span class="skill-pill">AWS</span><span class="skill-pill">+2 skills</span></div>
-          </div>
-
-          <div class="exp-item">
-            <h3 class="exp-role">System Engineer</h3>
-            <p class="exp-company">Vcube · Full-time</p>
-            <p class="exp-meta">Oct 2022 — Aug 2024 · 1 yr 11 mos</p>
-            <p class="exp-meta">Reggio Emilia, Emilia-Romagna, Italy · Hybrid</p>
-            <div class="exp-skills"><span class="skill-pill">AWS</span><span class="skill-pill">Jenkins</span><span class="skill-pill">+9 skills</span></div>
-          </div>
-
-          <div class="exp-item">
-            <h3 class="exp-role">Information Technology Consultant</h3>
-            <p class="exp-company">European Food Safety Authority (EFSA) · Full-time</p>
-            <p class="exp-meta">Oct 2021 — Sep 2022 · 1 yr</p>
-            <p class="exp-meta">Parma, Emilia-Romagna, Italy · On-site</p>
-            <div class="exp-skills"><span class="skill-pill">PowerShell</span></div>
-          </div>
-
-          <div class="exp-item">
-            <h3 class="exp-role">Technical Remote Specialist</h3>
-            <p class="exp-company">FDS, A DXC Technology Company · Full-time</p>
-            <p class="exp-meta">Sep 2021 — Sep 2022 · 1 yr 1 mo</p>
-            <p class="exp-meta">Parma, Emilia-Romagna, Italy</p>
-            <div class="exp-skills"><span class="skill-pill">Bash</span><span class="skill-pill">PowerShell</span><span class="skill-pill">+3 skills</span></div>
-          </div>
-
-          <div class="exp-item">
-            <h3 class="exp-role">Front Desk</h3>
-            <p class="exp-company">Europa School of English Ltd · Contract</p>
-            <p class="exp-meta">Jun 2019 — Aug 2019 · 3 mos</p>
-            <p class="exp-meta">Bournemouth, England, United Kingdom · On-site</p>
-          </div>
-
-          <div class="exp-item">
-            <h3 class="exp-role">Military Service</h3>
-            <p class="exp-company">Greek Army · Full-time</p>
-            <p class="exp-meta">Sep 2017 — Jun 2018 · 10 mos</p>
-            <p class="exp-meta">Kos, Southern Aegean, Greece</p>
-          </div>
-
-          <div class="exp-item">
-            <h3 class="exp-role">Finance Department Intern</h3>
-            <p class="exp-company">National Bank of Greece · Internship</p>
-            <p class="exp-meta">Oct 2016 — May 2017 · 8 mos</p>
-            <p class="exp-meta">Corinth, Peloponnese, Greece · On-site</p>
-          </div>
-
+        <div class="exp-item">
+          <h3 class="exp-role">DevOps Engineer</h3>
+          <p class="exp-company">Zucchetti Hospitality</p>
+          <p class="exp-meta">May 2026 — Present · 5 mos</p>
+          <p class="exp-meta">Reggio Emilia, Emilia-Romagna, Italy · Hybrid</p>
+          <div class="exp-skills"><span class="skill-pill">Terraform</span><span class="skill-pill">Ansible</span></div>
         </div>
       </div>
     </div>
@@ -503,7 +417,7 @@
           </div>
           <div class="skill-card">
             <span class="skill-label">Environments</span>
-            <span class="skill-values">Linux, AWS (CSAA), Pi, Proxmox</span>
+            <span class="skill-values">Linux, Windows Server, Azure, AWS (CSAA), Pi, Proxmox</span>
           </div>
         </div>
       </div>
