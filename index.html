@@ -366,6 +366,30 @@
 
         <div class="project-card">
           <div class="project-head">
+            <span class="project-name">designee</span>
+            <span class="project-tag">C# · React · In development</span>
+          </div>
+          <p class="project-desc">A home layout planner: draw your rooms, then furnish them from a catalog of about 200 pieces shown from above like an architect&rsquo;s plan. An ASP.NET Core (.NET 10) API with PostgreSQL does the work, and an &ldquo;Arrange&rdquo; button uses Google OR-Tools to place the furniture for you.</p>
+        </div>
+
+        <div class="project-card">
+          <div class="project-head">
+            <span class="project-name">elisium</span>
+            <span class="project-tag">C# · Razor · In development</span>
+          </div>
+          <p class="project-desc">A bilingual (Italian/English) marketing and portfolio website for a client, pre-rendered from a reusable C# Razor site engine I&rsquo;m building to power future client sites.</p>
+        </div>
+
+        <div class="project-card">
+          <div class="project-head">
+            <span class="project-name">runnerquest</span>
+            <span class="project-tag">Android · C# · In development</span>
+          </div>
+          <p class="project-desc">A guided running app with a light RPG layer: each run is a story chapter, training earns XP, and rest days count as progress. Kotlin on Android, with an optional self-hosted ASP.NET Core (.NET 10) server that backs up your runs.</p>
+        </div>
+
+        <div class="project-card">
+          <div class="project-head">
             <span class="project-name"><a href="https://dkproperties.gr/el/" target="_blank">dkproperties.gr ↗</a></span>
             <span class="project-tag">Full-Stack Deploy</span>
           </div>
@@ -375,9 +399,9 @@
         <div class="project-card">
           <div class="project-head">
             <span class="project-name"><a href="https://wasitdown.dev/" target="_blank">wasitdown.dev ↗</a></span>
-            <span class="project-tag">Go · Paused</span>
+            <span class="project-tag">Go · Archived</span>
           </div>
-          <p class="project-desc">An asynchronous status monitoring application for major cloud providers and machine learning APIs. Currently frozen due to upstream database networking changes.</p>
+          <p class="project-desc">A historical incident tracker for major cloud and AI providers: a Go scraper collected status-page data into PostgreSQL, and a generator published it as a fully static site on Cloudflare Pages. Now archived; the source is still on GitHub.</p>
         </div>
 
         <div class="project-card">
@@ -404,7 +428,7 @@
         <div class="exp-item">
           <h3 class="exp-role">DevOps Engineer</h3>
           <p class="exp-company">Zucchetti Hospitality</p>
-          <p class="exp-meta">May 2026 — Present · 5 mos</p>
+          <p class="exp-meta">May 2026 — Present · <span class="tenure" data-start="2026-05">6 mos</span></p>
           <p class="exp-meta">Reggio Emilia, Emilia-Romagna, Italy · Hybrid</p>
           <div class="exp-skills"><span class="skill-pill">Terraform</span><span class="skill-pill">Ansible</span></div>
         </div>
@@ -439,7 +463,7 @@
         <div class="skills-grid">
           <div class="skill-card">
             <span class="skill-label">Core Automation</span>
-            <span class="skill-values">Python, Go, Bash, TypeScript</span>
+            <span class="skill-values">C#, Python, Go, Bash, TypeScript</span>
           </div>
           <div class="skill-card">
             <span class="skill-label">Orchestration</span>
@@ -491,6 +515,19 @@
     }
     updateClock();
     setInterval(updateClock, 15000);
+
+    // Tenure counts the start month, like LinkedIn: May to October is 6 mos.
+    document.querySelectorAll('.tenure').forEach(function (el) {
+      var parts = el.dataset.start.split('-');
+      var now = new Date();
+      var months = (now.getFullYear() - Number(parts[0])) * 12 + (now.getMonth() + 1 - Number(parts[1])) + 1;
+      var yrs = Math.floor(months / 12);
+      var mos = months % 12;
+      var out = [];
+      if (yrs) out.push(yrs + (yrs === 1 ? ' yr' : ' yrs'));
+      if (mos) out.push(mos + (mos === 1 ? ' mo' : ' mos'));
+      el.textContent = out.join(' ');
+    });
   </script>
 
 </body>
