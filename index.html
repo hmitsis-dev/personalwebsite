@@ -428,7 +428,7 @@
         <div class="exp-item">
           <h3 class="exp-role">DevOps Engineer</h3>
           <p class="exp-company">Zucchetti Hospitality</p>
-          <p class="exp-meta">May 2026 — Present · 5 mos</p>
+          <p class="exp-meta">May 2026 — Present · <span class="tenure" data-start="2026-05">6 mos</span></p>
           <p class="exp-meta">Reggio Emilia, Emilia-Romagna, Italy · Hybrid</p>
           <div class="exp-skills"><span class="skill-pill">Terraform</span><span class="skill-pill">Ansible</span></div>
         </div>
@@ -515,6 +515,19 @@
     }
     updateClock();
     setInterval(updateClock, 15000);
+
+    // Tenure counts the start month, like LinkedIn: May to October is 6 mos.
+    document.querySelectorAll('.tenure').forEach(function (el) {
+      var parts = el.dataset.start.split('-');
+      var now = new Date();
+      var months = (now.getFullYear() - Number(parts[0])) * 12 + (now.getMonth() + 1 - Number(parts[1])) + 1;
+      var yrs = Math.floor(months / 12);
+      var mos = months % 12;
+      var out = [];
+      if (yrs) out.push(yrs + (yrs === 1 ? ' yr' : ' yrs'));
+      if (mos) out.push(mos + (mos === 1 ? ' mo' : ' mos'));
+      el.textContent = out.join(' ');
+    });
   </script>
 
 </body>
